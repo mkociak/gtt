@@ -1,9 +1,10 @@
 import React from 'react';
-import './App.css';
+import '../styles/App.scss';
+import Header from '../layouts/Header';
 
 function App() {
   return (
-    <h1>GTT</h1>
+    <Header />
   );
 }
 

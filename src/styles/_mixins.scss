@@ -1,0 +1,27 @@
+// 1. Buttons 
+
+@mixin button($bg-color: white, $font-color: black, $font-size: 1rem) {
+    width: 150px;
+    border-radius: 4px;
+    border: none;
+    background-color: $bg-color;
+    color: $font-color;
+    font-size: $font-size;
+    cursor: pointer;
+}
+
+.button-big {
+    @include button($bg-color: white, $font-color: black, $font-size: 1rem);
+    height: 50px;
+}
+
+@mixin button-medium($bg-color: white, $font-color: black, $font-size: 1rem) {
+    @include button($bg-color, $font-color, $font-size);
+    height: 38px;
+}
+
+@mixin button-line($bg-color: none, $font-color: black, $font-size: 1rem) {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
