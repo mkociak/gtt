@@ -1,1 +1,165 @@
 // 1. Buttons
+.btn-big {
+    height: 50px;
+}
+
+.btn-medium {
+    height: 38px;
+}
+
+.btn-line {
+    @include button($font-size: 1.5rem);
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.btn-line--active {
+    @extend .btn-line;
+    color: white;
+    background-color: $light-red-color;
+}
+
+
+.btn-transparent {
+    @include button(transparent, black);
+    border-color: black;
+    &::selection {
+        color: white;
+    }
+}
+
+.btn-green {
+    @include button($green-color, white);
+    &::selection {
+        color: $green-color;
+    }
+}
+
+.btn-red {
+    @include button($light-red-color, white);
+    &::selection {
+        color: $light-red-color;
+    }
+}
+
+.btn-search {
+    @include button($green-color, white);
+    width: 90px;
+    height: 38px;
+}
+
+.btn-coming-departure {
+    @include button();
+    width: 80px;
+    height: 38px;
+    font-weight: 700;
+    &::after {
+        @include button-triangle();
+    }
+}
+
+.btn-coming-departure--active {
+    background-color: $green-color;
+    color: white;
+    border: none;
+    &::after {
+        @include button-triangle;
+        transform: rotate(180deg);
+    }
+}
+
+.btn-calendar {
+    &::after {
+        @include button-triangle;
+    }
+}
+
+.btn-calendar--active {
+    background-color: $green-color;
+    border: none;
+    &::after {
+        transform: rotate(180deg);
+    }
+}
+
+// 2. Plates
+
+.info-plate {
+    width: 255px;
+    min-height: 80px;
+    text-align: center;
+    @include centerXY;
+    background-color: $plate-color;
+    border-radius: 15px;
+}
+
+.stop-list-item {
+    width: 315px;
+    height: 45px;
+    background-color: $plate-color;
+    @include centerXY;
+    cursor: pointer;
+}
+
+.stop-list-item--active {
+    @extend .stop-list-item;
+    background-color: $light-green-color;
+}
+
+// 3. Form
+
+.search-input {
+    width: 255px;
+    height: 40px;
+    border-radius: 4px;
+    padding-left: 15px;
+    border: none;
+    font-size: 1rem;
+    margin-bottom: 0;
+    &::placeholder {
+        color: $placeholder-color;
+        font-size: 1rem;
+    }
+}
+
+.search-item {
+    @extend .search-input;
+    background-color: #fff;
+    border: 2px solid black;
+    border-top: none;
+    height: 30px;
+    padding-left: 10px;
+    margin-top: 0;
+    cursor: pointer;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    &:hover {
+        background-color: $dark-gray-color;
+        color: white;
+    }
+}
+
+// 4. Timetable 
+
+.time-label {
+    width: 35px;
+    height: 35px;
+    @include centerXY;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.time-label-hour {
+    @extend .time-label;
+    background-color: $light-red-color;
+    color: white;
+    border: none;
+}
+
+.time-label--active {
+    @extend .time-label;
+    background-color: $light-green-color;
+}

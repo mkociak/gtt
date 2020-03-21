@@ -1,27 +1,39 @@
 // 1. Buttons 
 
 @mixin button($bg-color: white, $font-color: black, $font-size: 1rem) {
+    @include centerXY();
     width: 150px;
     border-radius: 4px;
-    border: none;
+    border: 1px solid $bg-color;
     background-color: $bg-color;
     color: $font-color;
     font-size: $font-size;
     cursor: pointer;
 }
 
-.button-big {
-    @include button($bg-color: white, $font-color: black, $font-size: 1rem);
-    height: 50px;
-}
-
-@mixin button-medium($bg-color: white, $font-color: black, $font-size: 1rem) {
-    @include button($bg-color, $font-color, $font-size);
-    height: 38px;
-}
-
 @mixin button-line($bg-color: none, $font-color: black, $font-size: 1rem) {
     width: 50px;
     height: 50px;
     border-radius: 10px;
+}
+
+// 2. Centering
+
+@mixin centerXY {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// 3. Others
+
+@mixin button-triangle {
+    display: inline-block;
+        margin-left: .255em;
+        vertical-align: .255em;
+        content: "";
+        border-top: .3em solid;
+        border-right: .3em solid transparent;
+        border-bottom: 0;
+        border-left: .3em solid transparent;
 }
