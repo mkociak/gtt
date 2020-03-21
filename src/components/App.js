@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles/App.scss';
-import Header from '../layouts/Header';
+import Components from '../components/Components';
 
 function App() {
   return (
-    <Header />
+    <Components />
   );
 }
 

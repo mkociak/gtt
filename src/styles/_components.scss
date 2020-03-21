@@ -18,12 +18,12 @@
     @extend .btn-line;
     color: white;
     background-color: $light-red-color;
+    border: none;
 }
 
 
-.btn-transparent {
-    @include button(transparent, black);
-    border-color: black;
+.btn-white {
+    @include button(white, black);
     &::selection {
         color: white;
     }
@@ -103,8 +103,8 @@
 }
 
 .stop-list-item--active {
-    @extend .stop-list-item;
-    background-color: $light-green-color;
+    background-color: $green-color;
+    color: white;
 }
 
 // 3. Form
@@ -120,6 +120,9 @@
     &::placeholder {
         color: $placeholder-color;
         font-size: 1rem;
+    }
+    &:focus {
+        border: 2px solid black;
     }
 }
 
@@ -161,5 +164,69 @@
 
 .time-label--active {
     @extend .time-label;
-    background-color: $light-green-color;
+    background-color: $green-color;
+    color: white;
+}
+
+// 5. Live timetable
+
+.live-timetable {
+    // height: 150px;
+    width: 315px;
+    color: $yellow-color;
+    border-collapse: collapse;
+    border-top: 5px solid $lighter-gray-color;
+    border-bottom: 5px solid $dark-gray-color;
+    
+    thead {
+        background-color: $lighter-gray-color;
+        // border-bottom: 5px solid $lighter-gray-color;
+        
+        tr {
+            
+            th {
+                border-right: 2px solid;
+                padding-bottom: 5px;
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+    tbody {
+        background-color: $dark-gray-color;
+        tr {
+            .first-td {
+                padding-top: 5px;
+            }
+            td {
+                padding-left: 10px;
+                border-right: 2px solid $yellow-color;
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        } 
+    }
+}
+
+// 6. Calendar
+
+.calendar {
+    background-color: $plate-color;
+    border-radius: 15px;
+    padding: 10px;
+    width: 315px;
+    height: 300px;
+    tbody {
+        tr {
+            td {
+                text-align: center;
+            }
+            .currentDay {
+                border: 2px solid $green-color;
+                border-radius: 15px;
+            }
+        }
+    }
 }
